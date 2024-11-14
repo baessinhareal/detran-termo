@@ -1,6 +1,6 @@
 // script.js
 
-const words = ["SINAL", "RADAR", "FAIXA", "PISTA", "CURVA", "FAROL", "CINTO", "ACESO", "PLACA", "ROTAS", "FREIO", "MULTA", "SILVO", "APITO", "FLUXO", "VIGOR"]; 
+const words = ["SINAL", "RADAR", "FAIXA", "PISTA", "CURVA", "FAROL", "CINTO", "ACESO", "PLACA", "ROTAS", "FREIO", "MULTA", "SILVO", "APITO", "FLUXO", "VIGOR"];
 const targetWord = words[Math.floor(Math.random() * words.length)];
 let currentGuess = "";
 let currentRow = 0;
@@ -93,8 +93,11 @@ function disableKey(letter) {
 function showModal() {
     const modal = document.getElementById("result-modal");
     const modalText = document.getElementById("modal-text");
+    // Usa <br> para exibir quebras de linha no modal, mas \n para cópia
+    const displayText = `Wordle Clone - ${currentRow + 1}/6<br><br>` + results.join("<br>");
     const shareText = `Wordle Clone - ${currentRow + 1}/6\n\n` + results.join("\n");
-    modalText.innerText = shareText; // Usa innerText para manter as quebras de linha
+
+    modalText.innerHTML = displayText; // Exibe com quebras de linha HTML
     modal.style.display = "block";
 
     // Configura o botão de copiar

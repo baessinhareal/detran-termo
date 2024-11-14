@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Wordle Clone</h1>
+    <div id="game-board"></div>
+    <div id="keyboard">
+        <div class="keyboard-row">
+            <button onclick="keyPress('A')">A</button>
+            <button onclick="keyPress('B')">B</button>
+            <button onclick="keyPress('C')">C</button>
+            <button onclick="keyPress('D')">D</button>
+            <button onclick="keyPress('E')">E</button>
+            <button onclick="keyPress('F')">F</button>
+            <button onclick="keyPress('G')">G</button>
+            <button onclick="keyPress('H')">H</button>
+            <button onclick="keyPress('I')">I</button>
+            <button onclick="keyPress('J')">J</button>
+            <button onclick="keyPress('K')">K</button>
+            <button onclick="keyPress('L')">L</button>
+            <button onclick="keyPress('M')">M</button>
+            <button onclick="keyPress('N')">N</button>
+            <button onclick="keyPress('O')">O</button>
+            <button onclick="keyPress('P')">P</button>
+            <button onclick="keyPress('Q')">Q</button>
+            <button onclick="keyPress('R')">R</button>
+            <button onclick="keyPress('S')">S</button>
+            <button onclick="keyPress('Ç')">Ç</button>
+            <button onclick="keyPress('T')">T</button>
+            <button onclick="keyPress('U')">U</button>
+            <button onclick="keyPress('V')">V</button>
+            <button onclick="keyPress('W')">W</button>
+            <button onclick="keyPress('X')">X</button>
+            <button onclick="keyPress('Y')">Y</button>
+            <button onclick="keyPress('Z')">Z</button>
+        </div>
+        <button onclick="deleteLetter()">⌫</button>
+        <button onclick="submitGuess()">Enter</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- Modal de resultado -->
+<div id="result-modal" class="modal">
+    <div class="modal-content">
+        <p id="modal-text"></p>
+        <button id="copy-button">Copiar Resultado</button>
+    </div>
+</div>

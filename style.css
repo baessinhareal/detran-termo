@@ -92,9 +92,11 @@ button {
 #copy-button {
     margin-top: 10px;
     padding: 12px 24px; /* Aumenta o tamanho do botão */
-    font-size: 1em;
+    font-size: 1.1em; /* Aumenta o tamanho do texto */
     cursor: pointer;
     text-align: center;
     white-space: nowrap; /* Impede que o texto quebre */
     max-width: 100%;
+    width: auto; /* Ajusta o tamanho do botão ao conteúdo */
+    display: inline-block; /* Garante que o botão se ajuste ao tamanho do conteúdo */
 }

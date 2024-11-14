@@ -8,9 +8,12 @@
 </head>
 <body>
     <h1>Wordle Clone</h1>
+    
     <div id="game-board"></div>
+    
     <div id="keyboard">
         <div class="keyboard-row">
+            <!-- Teclado virtual com as letras -->
             <button onclick="keyPress('A')">A</button>
             <button onclick="keyPress('B')">B</button>
             <button onclick="keyPress('C')">C</button>
@@ -42,14 +45,15 @@
         <button onclick="deleteLetter()">⌫</button>
         <button onclick="submitGuess()">Enter</button>
     </div>
+
+    <!-- Modal de resultado -->
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <p id="modal-text"></p>
+            <button id="copy-button" onclick="copyResult()">Copiar Resultado</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-
-<!-- Modal de resultado -->
-<div id="result-modal" class="modal">
-    <div class="modal-content">
-        <p id="modal-text"></p>
-        <button id="copy-button">Copiar Resultado</button>
-    </div>
-</div>

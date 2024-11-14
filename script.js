@@ -9,7 +9,6 @@ let results = []; // Array para armazenar resultados de cada linha
 
 const gameBoard = document.getElementById("game-board");
 
-// Criação do tabuleiro com 6 linhas e 5 colunas
 for (let i = 0; i < 6; i++) {
     for (let j = 0; j < 5; j++) {
         const tile = document.createElement("div");
@@ -19,7 +18,6 @@ for (let i = 0; i < 6; i++) {
     }
 }
 
-// Função para quando uma tecla é pressionada
 function keyPress(letter) {
     if (currentGuess.length < 5 && !gameOver) {
         currentGuess += letter;
@@ -27,7 +25,6 @@ function keyPress(letter) {
     }
 }
 
-// Função para apagar uma letra
 function deleteLetter() {
     if (!gameOver) {
         currentGuess = currentGuess.slice(0, -1);
@@ -35,7 +32,6 @@ function deleteLetter() {
     }
 }
 
-// Função para submeter uma tentativa
 function submitGuess() {
     if (currentGuess.length !== 5 || gameOver) {
         alert("A palavra deve ter 5 letras!");
@@ -67,17 +63,16 @@ function submitGuess() {
 
     if (currentGuess === targetWord) {
         gameOver = true;
-        showModal(true);
+        showModal();
     } else if (currentRow === 5) {
         gameOver = true;
-        showModal(false);
+        showModal();
     } else {
         currentRow++;
         currentGuess = "";
     }
 }
 
-// Função para atualizar o tabuleiro com as letras inseridas
 function updateBoard() {
     for (let i = 0; i < 5; i++) {
         const tile = document.getElementById(`row-${currentRow}-col-${i}`);
@@ -95,16 +90,16 @@ function disableKey(letter) {
 }
 
 // Função para mostrar o modal de resultado final
-function showModal(isWin) {
+function showModal() {
     const modal = document.getElementById("result-modal");
     const modalText = document.getElementById("modal-text");
     const shareText = `Wordle Clone - ${currentRow + 1}/6\n\n` + results.join("\n");
-    modalText.innerHTML = isWin ? "Parabéns! Você acertou!\n\n" + shareText : "Fim de jogo! A palavra era: " + targetWord + "\n\n" + shareText;
+    modalText.innerText = shareText; // Usa innerText para manter as quebras de linha
     modal.style.display = "block";
 
     // Configura o botão de copiar
     const copyButton = document.getElementById("copy-button");
-    copyButton.onclick = () => copyToClipboard(shareText);
+    copyButton.onclick = () => copyToClipboard(shareText); // Copia o texto formatado para a área de transferência
 }
 
 // Função para copiar o texto para a área de transferência

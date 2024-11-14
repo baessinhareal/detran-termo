@@ -88,20 +88,13 @@ button {
     font-size: 1.2em;
 }
 
-/* Ajuste no botão de copiar para melhor aparência */
+/* Ajusta o botão de copiar */
 #copy-button {
-    margin-top: 15px;
-    padding: 10px 25px;
+    margin-top: 10px;
+    padding: 12px 24px; /* Aumenta o tamanho do botão */
     font-size: 1em;
     cursor: pointer;
-    background-color: #6aaa64;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    display: inline-block;
     text-align: center;
-}
-
-#copy-button:hover {
-    background-color: #5c9458;
+    white-space: nowrap; /* Impede que o texto quebre */
+    max-width: 100%;
 }
